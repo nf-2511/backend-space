@@ -1,5 +1,7 @@
 const express = require('express')
 const cors = require('cors')
+const connectDatabase = require('./config/database')
+
 
 const app = express()
 
@@ -7,10 +9,9 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-// database
-const database = [
 
-]
+// connect database
+connectDatabase()
 
 // routes ( API )
 
