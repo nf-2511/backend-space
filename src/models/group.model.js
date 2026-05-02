@@ -38,6 +38,4 @@ groupSchema.virtual("coin").get(() => {
     return this.students.length * 100
 })
 
-
-
 module.exports = mongoose.model('group', groupSchema)
