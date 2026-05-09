@@ -1,7 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 const connectDatabase = require('./config/database')
-
+const branchRouter = require('./router/branch.router')
+const adminRouter = require('./router/admin.router')
 
 const app = express()
 
@@ -53,6 +54,8 @@ app.post('/login', (req, res) => {
 })
 
 
+app.use("/api/v1/branch", branchRouter)
+app.use('/api/v1/admin', adminRouter)
 
 app.listen('3000', () => {
     console.log('Server is running on port 3000')
