@@ -16,42 +16,42 @@ connectDatabase()
 
 // routes ( API )
 
-app.post('/register', (req, res) => {
-    const { role, id, password, name, surname, age, phone, gender } = req.body
+// app.post('/register', (req, res) => {
+//     const { role, id, password, name, surname, age, phone, gender } = req.body
 
-    if (!role || !id || !password) {
-        return res.status(400).json({ error: 'Missing required fields' })
-    }
-    // check if user already exists
-    const checkUser = database.find(user => user.id === id) // true / false
+//     if (!role || !id || !password) {
+//         return res.status(400).json({ error: 'Missing required fields' })
+//     }
+//     // check if user already exists
+//     const checkUser = database.find(user => user.id === id) // true / false
 
-    if (checkUser) {
-        // bor bo'lsa
-        return res.status(400).json({ error: 'User already exists' })
-    }
+//     if (checkUser) {
+//         // bor bo'lsa
+//         return res.status(400).json({ error: 'User already exists' })
+//     }
 
-    database.push({
-        role, id, password, name, surname, age, phone, gender, coin: 0, balance: 0, created_at: new Date().toLocaleString(), group: null, attendence: []
-    })
+//     database.push({
+//         role, id, password, name, surname, age, phone, gender, coin: 0, balance: 0, created_at: new Date().toLocaleString(), group: null, attendence: []
+//     })
 
-    return res.status(200).json({ message: 'User created successfully' })
-})
+//     return res.status(200).json({ message: 'User created successfully' })
+// })
 
-app.post('/login', (req, res) => {
-    const { id, password } = req.body
+// app.post('/login', (req, res) => {
+//     const { id, password } = req.body
 
-    if (!id || !password) {
-        return res.status(400).json({ error: 'Missing required fields' })
-    }
+//     if (!id || !password) {
+//         return res.status(400).json({ error: 'Missing required fields' })
+//     }
 
-    const checkUser = database.find(user => user.id === id && user.password === password)
+//     const checkUser = database.find(user => user.id === id && user.password === password)
 
-    if (!checkUser) {
-        return res.status(400).json({ error: 'User not found' })
-    }
+//     if (!checkUser) {
+//         return res.status(400).json({ error: 'User not found' })
+//     }
 
-    return res.status(200).json({ message: 'User logged in successfully' })
-})
+//     return res.status(200).json({ message: 'User logged in successfully' })
+// })
 
 
 app.use("/api/v1/branch", branchRouter)

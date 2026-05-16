@@ -15,28 +15,7 @@ const branchSchema = new mongoose.Schema({
     },
     location: {
         type: String,
-        required: true
     },
-    manager: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "admin" // reference 
-    },
-    tutors: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "tutor"
-        }
-    ],
-    mentors: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "mentor"
-        }
-    ],
-    students: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "student"
-        }
-    ]
-})
+}, { timestamps: true })
+
+module.exports = mongoose.model('Branch', branchSchema)

@@ -12,13 +12,25 @@ const groupModel = require('../models/group.model')
 
 module.exports = router
 
-// 10:24
-// 10:42 - 100
-// 10:45 - 50
-// 10:50 - 20
+// 10:24 
+// 10:32 - 100
+// 10:39 - 50
+// 10:45 - 25
+// 10:51 - 15
 
 // validation
 // model bo'yicha filter 
+
+
+// Ruslan - 42 - 18
+// sharif - 45 - 21
+// Firdavs - 48 - 24
+// Ziyo - 50 - 26
+// Muhammadali - 47 - 23
+// salimov - 46 - 22
+// Dilmuhammad - ?
+
+
 
 
 

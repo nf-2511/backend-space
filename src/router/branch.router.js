@@ -6,22 +6,23 @@ const router = express.Router()
 // API LIST
 // create branch
 router.post('/create', async (req, res) => {
-    const { name, address, phone, location, manager, tutors, mentors, students } = req.body
+    const { name, address, phone, } = req.body
 
     // validation
-    if (!name || !address || !phone || !location) {
+    if (!name || !address || !phone) {
         return res.status(400).json({ error: 'Kerakli malumotlarni to`ldiring' })
     }
 
     try {
         const newBranch = await branchModel.create({
-            name, address, phone, location, manager, tutors, mentors, students
+            name, address, phone,
         })
         res.status(200).json({ message: "Filial muvoffiqiyatli yaratildi", newBranch })
     } catch (error) {
         console.log(error)
     }
 })
+
 // all branches
 router.get('/all', async (req, res) => {
     try {
